@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Print Style SVG Converter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <h1 class="text-center mb-4 text-light">3D Print Style SVG Converter</h1>
+
+        <div class="mb-4">
+            <label for="fileInput" class="form-label">Select an Image:</label>
+            <input class="form-control" type="file" id="fileInput" accept="image/*">
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-3 mb-3">
+                <label for="widthMm" class="form-label">Width (mm):</label>
+                <input type="number" class="form-control" id="widthMm" value="100" min="1" max="500">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="heightMm" class="form-label">Height (mm):</label>
+                <input type="number" class="form-control" id="heightMm" value="80" min="1" max="500">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="dpi" class="form-label">DPI:</label>
+                <input type="number" class="form-control" id="dpi" value="300" min="1" max="1200">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="nozzleSizeMm" class="form-label">Nozzle Size (mm):</label>
+                <input type="number" class="form-control" id="nozzleSizeMm" value="0.2" step="0.1" min="0.1" max="1.0">
+            </div>
+        </div>
+
+        <div id="warningMessage"></div>
+
+        <div class="loading-spinner" id="loadingSpinner">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Processing...</span>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h5>Live SVG Preview:</h5>
+            <div id="previewContainer">
+                <div id="svgPreview"></div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button id="downloadBtn" class="btn btn-success" style="display: none;">Download SVG</button>
+        </div>
+    </div>
+
+    <canvas id="hiddenCanvas" style="display: none;"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/imageProcessor.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

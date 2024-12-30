@@ -1,0 +1,25 @@
+.form-control {
+    background-color: #2a2a2a;
+    border-color: #404040;
+    color: #e1e1e1;
+}
+
+.form-control:focus {
+    background-color: #2a2a2a;
+    border-color: #0d6efd;
+    color: #e1e1e1;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-control:disabled {
+    background-color: #1a1a1a;
+    color: #888;
+}
+
+.form-label {
+    color: #e1e1e1;
+}
+
+#svgPreview svg {
+    filter: invert(1);
+}
